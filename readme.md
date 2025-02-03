@@ -59,6 +59,7 @@ Ensure you have Python installed on your system (recommended: Python 3.8+).
    pip install -r requirements.txt
    ```
 4. **Update the database configuration before running the app!**
+   
 5. Run the application from the terminal (where XXXX is your desired port):
    ```bash
    flask run -p XXXX
