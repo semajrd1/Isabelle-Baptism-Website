@@ -83,10 +83,6 @@ Ensure you have Python installed on your system (recommended: Python 3.8+).
    ```bash
    git push heroku main
    ```
-6. Open the application:
-   ```bash
-   heroku open
-   ```
 
 ## Technologies Used
 - **Frontend:** HTML, CSS (SASS), JavaScript
