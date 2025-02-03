@@ -104,7 +104,7 @@ If you would like to contribute:
 4. Open a pull request for review.
 
 ## Contact
-For any questions or suggestions, feel free to reach out to [your email or GitHub profile].
+For any questions or suggestions, feel free to reach out!
 
 ---
 ### Demo
