@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  
+  <link href="static/styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Indie+Flower&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Gloria+Hallelujah&family=Patrick+Hand&family=Raleway:wght@200&display=swap" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check free response submission
+      try { document.querySelector('#going_or_not').addEventListener('change', function() {
+          let input = document.querySelectorAll('option:checked');
+          if (this.value == "not_going") {
+            console.log('No selected');
+            document.getElementById("number_of_veggies").disabled = true;
+            document.getElementById("number_of_veggies").hidden = true;
+            document.getElementById("number_of_people").disabled = true;
+            document.getElementById("number_of_people").hidden = true;
+            document.getElementById("people_label").hidden = true;
+            document.getElementById("veggies_label").hidden = true;
+          }
+          else {
+            console.log('Yes selected');
+            document.getElementById("number_of_veggies").disabled = false;
+            document.getElementById("number_of_veggies").hidden = false;
+            document.getElementById("number_of_people").disabled = false;
+            document.getElementById("number_of_people").hidden = false;
+            document.getElementById("people_label").hidden = false;
+            document.getElementById("veggies_label").hidden = false;
+          }
+      });
+    } catch (error) {}
+    })
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check free response submission
+      try { document.querySelector('#number_of_people').addEventListener('change', function() {
+        document.getElementById("number_of_veggies").options.length=0; 
+        $("#number_of_veggies").append("<option hidden></option>",)
+        let select = document.querySelectorAll('option:checked');
+          // console.log(select);
+          for (let i = -1; i < this.value; i++) {
+            $("#number_of_veggies").append("<option>"+(i + 1)+"</option>",)
+          }
+      });
+    } catch (error) {}
+    })
+  </script>
+
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+  <nav class="nav">
+    <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
+    <label for="nav__checkbox" class="nav__toggle">
+          <svg class="menu" viewBox="0 0 448 512" width="100" title="bars">
+            <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+          </svg>
+          <svg class="close" viewBox="0 0 384 512" width="100" title="times">
+            <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
+          </svg>
+        </label>
+    
+    <ul class="nav__menu">
+      <li>
+        <a href="/">
+          <p style="font-family: satisfy, cursive; font-size: 25pt; color:#ebc7e1">Isabelle's Baptism</p>
+        </a>
+      </li>
+      <li><a href="/info" style="font-size: 20pt; font-family: 'Caveat', cursive;">Information</a></li>
+      <li id="register"><a href="/register"><button class="btn-regi" style="font-size: 20pt; font-family: 'Caveat', cursive;">Register</button></a></li>
+    </ul>
+  </nav>
+
+  {% block body %}{% endblock %}
+</body>

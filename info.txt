@@ -1,0 +1,24 @@
+when defining the database in the python file...
+from project_name import app, db
+app.app_context().push()
+db.create_all()
+
+for entering the virtual environment...
+enter "source virtual/bin/activate" in the terminal
+
+if python starts complaining about the "port being used by another application"...
+just type "flask run -p XXXX" where the XXXX is the four digit port number!
+
+SOME DETAILS ABOUT USING HEROKU
+(open terminal in directory where app is)
+login to heroku "heroku login"
+update website process...
+    git add .
+    git commit -am 'what's new??'
+    git push heroku master
+
+to create the original table schema using the SQLAlchemy class...
+    heroku run python
+    from app import app, db
+    app.app_context().push()
+    db.create_all()

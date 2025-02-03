@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  
+  <link href="static/styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Indie+Flower&display=swap" rel="stylesheet">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      try { document.querySelector('#going_or_not').addEventListener('change', function() {
+          let input = document.querySelectorAll('option:checked');
+          if (this.value == "not_going") {
+            console.log('No selected');
+            document.getElementById("number_of_veggies").disabled = true;
+            document.getElementById("number_of_veggies").hidden = true;
+            document.getElementById("number_of_people").disabled = true;
+            document.getElementById("number_of_people").hidden = true;
+            document.getElementById("people_label").hidden = true;
+            document.getElementById("veggies_label").hidden = true;
+          }
+          else {
+            console.log('Yes selected');
+            document.getElementById("number_of_veggies").disabled = false;
+            document.getElementById("number_of_veggies").hidden = false;
+            document.getElementById("number_of_people").disabled = false;
+            document.getElementById("number_of_people").hidden = false;
+            document.getElementById("people_label").hidden = false;
+            document.getElementById("veggies_label").hidden = false;
+          }
+      });
+    } catch (error) {}
+    })
+    
+  </script>
+
+  <title>Isabelle's Baptism</title>
+</head>
+
+<body style="max-width:none; margin:auto; position:absolute; height:100%; width:100%; display:flex; align-items:center; justify-content:center;">
+  <div style="position:relative;">
+    <p style="font-family: satisfy, cursive; font-size: 15pt; color:darkolivegreen; text-align:center;">
+      On a warm, serene day in Crete,<br>
+      By the turquoise, sun-kissed sea,<br>
+      Loved ones gather 'round to meet,<br>
+      Isabelle baptized and filled with glee.<br>
+      <br>
+      Her parents hold her with tender care,<br>
+      In a gown of pure, angelic white,<br>
+      As the priest blesses her with a prayer,<br>
+      And bestows upon her heaven's light.<br>
+      <br>
+      Afterwards, a feast of Greek delights,<br>
+      Olives, feta, and baklava too,<br>
+      All savored under the warm sunlight,<br>
+      As Isabelle begins her journey anew.
+    </p>
+  </div>         
+</body>

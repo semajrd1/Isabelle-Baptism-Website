@@ -1,0 +1,640 @@
+/*   color variables */
+$clr-gray600: #2a324b;
+
+:root {
+--clr-darkgrey: #AAAAAA;
+--clr-primary: #0e48fe;
+--clr-primary-hover: #29e6a7;
+--clr-primary-dark: #039d69;
+--clr-gray100: #f9fbff;
+--clr-gray150: #f4f6fb;
+--clr-gray200: #eef1f6;
+--clr-gray300: #e1e5ee;
+--clr-gray400: #767b91;
+--clr-gray500: #4f546c;
+--clr-gray700: #161d34;
+
+/*   border radius */
+--radius: 0.5rem;
+--main-padding: 0.5rem;
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dosis', sans-serif;
+  // font-weight: 700;
+  color:var(--clr-gray600);
+  // height: 150vh;
+  background:var(--clr-gray100);
+  margin: auto;
+  height: auto;
+  max-width: 1100px;
+  max-height: none;
+  min-width: 330px;
+}
+
+.btn-regi {
+  font-family:"Andika New Basic", sans-serif;
+  color: white;
+  font-size:1.2rem;
+  background:#e3ccdd;
+  border:none;
+  outline:none;
+  border-radius:var(--radius);
+  padding:0.5rem 1rem;
+  cursor: pointer;
+}
+
+.hyperspan {
+  position:absolute;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+}
+
+.box-with-text {
+  background-color: rgba(200, 200, 200, 0.6);
+  padding:1rem;
+  margin-left:1rem;
+  margin-right:1rem;
+  border-radius:var(--radius);
+  color:white;
+}
+
+.nav {
+  background:white;
+  box-shadow:0px 0px 10px var(--clr-darkgrey);
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border-radius:var(--radius);
+  z-index: 100;
+
+  &__toggle {
+    position: relative;
+    float:right;
+    cursor: pointer;
+    margin: 1.2rem 1rem;
+    right: 0;
+
+    svg {
+      width: 1.5rem;
+      fill:var(--clr-gray600);
+    }
+
+    .close {
+      display: none;
+    }
+
+    .menu {
+      margin-top: 0.0rem;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    align-items: center;
+    margin: 1rem;
+    // margin-right: 4rem;
+    padding-left:0;
+
+    li {
+      margin-left: 1rem;
+      margin-right: 0rem;
+      margin-top:0.5rem;
+      margin-bottom:0.5rem;
+      list-style: none;
+      display: none;
+
+      &:first-child {
+        margin-right: auto;
+        display: block;
+        margin-left:0;
+        margin-top:0.5rem;
+        margin-bottom:0.5rem;
+      }
+
+      &:last-child {
+        align-items: center;
+        margin-right:0;
+        margin-top:1rem;
+        margin-bottom:1rem;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 1.2rem;
+      display:flex;
+    }
+
+    svg {
+      width: 1.5rem;
+      fill: $clr-gray600;
+    }
+  }
+}
+
+// Toggle the hamburger menu in mobile view
+#nav__checkbox:checked ~ ul.nav__menu li {
+  display: block;
+}
+
+//Change from menu to close icon on tap
+#nav__checkbox:checked ~ label.nav__toggle .close {
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .menu {
+  display: none;
+}
+
+/* Desktop view */
+@media only screen and (min-width: 650px) {
+  .nav {
+    &__toggle {
+      display: none;
+    }
+
+    &__menu {
+      flex-direction: row;
+
+      li {
+        display: block;
+      }
+    }
+  }
+}
+
+// RESPONSIVE CSS GRID START
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "main main" "content1 content2" "content4 content5" "footer footer";
+  grid-gap: 0.5rem;
+  // font-weight: 800;
+  font-size: 12px;
+  color: black;
+  text-align: center;
+  grid-auto-rows: min-content;
+}
+
+.container_info {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "contenta contentb" "contentc contentd" "contente contentf" "contentg contenth" "footer footer";
+  grid-gap: 0.5rem;
+  // font-weight: 800;
+  font-size: 12px;
+  color: black;
+  text-align: center;
+  grid-auto-rows: min-content;
+}
+
+.cont {
+  /* Center vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left:none;
+  padding-right:none;
+  position:relative;
+}
+
+// .cont-bottom {
+//   /* Center vertically and horizontally */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding-left:1rem;
+//   padding-right:1rem;
+// }
+
+.circle {
+  width: auto;
+  height: auto;
+  line-height: auto;
+  text-align: center;
+  background: #000;
+  border-radius: var(--radius);
+}
+
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.child {
+  font-size:15pt;
+}
+
+p { margin:0;
+    font-family: 'Indie Flower', cursive;
+}
+
+main {
+  grid-area: main;
+  min-height: 550px;
+  background-image: url(olive_branches_40_pink.png);
+  background-size: auto 80%;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+
+#content1 {
+  background: #ebc7e1;
+  background-image: url(sunset.jpeg);
+  background-size: auto 130%;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  grid-area: content1;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+  cursor: pointer;
+}
+
+#content2 {
+  background: #ebc7e1;
+  background-image: url(flowers.jpg);
+  background-size: auto 140%;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  grid-area: content2;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+  cursor: pointer;
+}
+
+#content4 {
+  background: white;
+  grid-area: content4;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+}
+
+#content5 {
+  background: white;
+  grid-area: content5;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+}
+
+footer {
+  margin-top: 3rem;
+  background: #ebc7e1;
+  grid-area: footer;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+
+#contenta {
+  background: white;
+  grid-area: contenta;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+}
+
+#contentb {
+  background: #ebc7e1;
+  background-image: url(boat_balos.jpeg);
+  background-size: auto 130%;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  grid-area: contentb;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+  cursor: pointer;
+}
+
+#contentc {
+  background: #ebc7e1;
+  background-image: url(clouds.png);
+  background-size: auto 130%;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  grid-area: contentc;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+  cursor: pointer;
+}
+
+#contentd {
+  background: white;
+  grid-area: contentd;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+}
+
+#contente {
+  background: white;
+  grid-area: contente;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+}
+
+#contentf {
+  background: #ebc7e1;
+  background-image: url(maria_beach.jpg);
+  background-size: auto 130%;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  grid-area: contentf;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+  cursor: pointer;
+}
+
+#contentg {
+  background: #ebc7e1;
+  background-image: url(gorge.jpg);
+  background-size: auto 210%;
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
+  grid-area: contentg;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+  cursor: pointer;
+}
+
+#contenth {
+  background: white;
+  grid-area: contenth;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+}
+
+// ANGELA DELISE FORM CODE
+.container_form {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "form contentx" "footer footer";
+  grid-gap: 0.5rem;
+  // font-weight: 800;
+  font-size: 12px;
+  color: black;
+  text-align: center;
+  grid-template-rows: max-content auto;
+}
+
+#contentx {
+  background: #ebc7e1;
+  background-image: url(belle.jpeg);
+  background-size: auto 210%;
+  background-position: 50% 20%;
+  background-repeat: no-repeat;
+  grid-area: contentx;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+select:-webkit-autofill,
+select:-webkit-autofill:hover, 
+select:-webkit-autofill:focus, 
+select:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.form {
+  // background: white;
+  grid-area: form;
+  border-radius: var(--radius);
+  padding-top: var(--main-padding);
+
+  // width: 24rem;
+  padding: 1rem;
+  border-radius: --radius;
+  background-color: white;
+
+  &__select {
+    width: 100%;
+    border: 1.5px solid grey;
+    border-radius: 0.5rem;
+    position: relative;
+    height: 3.5rem;
+    width: 100%;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    outline: none;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    appearance: none;
+    color: black !important;
+    background-color: white !important;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    font-size: 11pt;
+
+    &:hover {
+      border-color: #ebc7e1;
+    }
+
+    &:focus {
+      border-color: #ebc7e1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+  }
+
+  &__description {
+    margin-bottom: 1rem;
+  }
+
+  &__group {
+    position: relative;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid grey;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    // font-weight: inherit;
+    color: inherit;
+    outline: none;
+    padding: 1.25rem;
+    background: white;
+    font-size:11pt;
+
+    &:hover {
+      border-color: #ebc7e1;
+    }
+
+    &:focus {
+      border-color: #ebc7e1;
+    }
+  }
+
+  &__input_greyed {
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid grey;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    // font-weight: inherit;
+    color: inherit;
+    outline: none;
+    padding: 1.25rem;
+    background: lightgray;
+    user-select: none;
+    font-size:11pt;
+  }
+
+  &__label {
+    position: absolute;
+    left: 1rem;
+    top: 0.9rem;
+    padding: 0 0.5rem;
+    background-color: white;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    user-select: none;
+  }
+
+  &__button {
+    display: block;
+    margin-left: auto;
+    padding: 0.75rem 2rem;
+    // background-color: var(--clr-gray400);
+    font-family: 'Indie Flower', cursive;
+    font-size: 13pt;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 200ms ease-in;
+
+    &:hover {
+      background-color: #e3ccdd;
+    }
+  }
+}
+
+/* 
+1. When the input is in the focus state
+reduce the size of the label and move upwards 
+
+2. Keep label state when content is in input field 
+*/
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  font-size: 0.8rem;
+}
+
+.form__select:focus ~ .form__label,
+select:valid ~ .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    // height: 300vh;
+    grid-template-columns: 1fr;
+    // grid-template-rows: auto 450px auto 450px auto auto;
+    grid-template-areas:
+      // "sidebar"
+      "main"
+      "content1"
+      "content4"
+      "content2"
+      "content5"
+      "footer";
+  }
+
+  .container_info {
+    // height: 300vh;
+    grid-template-columns: 1fr;
+    // grid-template-rows: auto 450px auto 450px auto auto;
+    grid-template-areas:
+      // "sidebar"
+      "main"
+      "contentb"
+      "contenta"
+      "contentc"
+      "contentd"
+      "contentf"
+      "contente"
+      "contentg"
+      "contenth"
+      "footer";
+  }
+
+  .container_form {
+    // height: 300vh;
+    grid-template-columns: 1fr;
+    // grid-template-rows: auto 450px auto 450px auto auto;
+    grid-template-areas:
+      // "sidebar"
+      "contentx"
+      "form"
+      "footer";
+  }
+
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover, 
+  select:-webkit-autofill:focus, 
+  select:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+
+  #register {
+    margin-top:0.5rem;
+  }
+
+  main {
+    min-height: none;
+  }
+}
+// RESPONSIVE CSS GRID END
