@@ -4,7 +4,10 @@
 This repository contains a Flask-based web application designed for Isabelle's baptism event. The website serves as an information hub, providing event details, RSVP functionality, and interactive elements for guests. The project employs modern web technologies, including HTML, CSS (SASS), JavaScript, and Python.
 
 ## Important Note ⚠️
-**This application will NOT run until you change the database configuration and set up the database correctly!** Please make sure to update the required line in `app.py` and configure the database before running the project.
+**This application will NOT run until you change the database configuration and set up the database correctly!** Please make sure to update the required line in `app.py` and configure the database before running the project—e.g. this line:
+```
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://user:password@localhost/invitees'
+```
 
 ## Features
 - **Event Information Page**: Displays details about the baptism ceremony and reception.
