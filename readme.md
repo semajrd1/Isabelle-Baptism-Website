@@ -21,13 +21,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://user:password@localhost/in
 ```
 ├── instance/          # Flask instance folder (e.g., database, sensitive data)
 ├── static/            # Contains CSS, JavaScript, and images
-│   ├── css/           # Stylesheets (SASS compiled CSS)
-│   ├── js/            # JavaScript files
-│   └── images/        # Event-related images
 ├── templates/         # HTML templates for Flask rendering
-│   ├── index.html     # Main landing page
-│   ├── rsvp.html      # RSVP form page
-│   ├── confirmation.html # Confirmation page after RSVP submission
 ├── virtual/           # Virtual environment (not included in Git)
 ├── .gitignore         # Files and directories to be ignored by Git
 ├── Procfile           # Defines startup command for Heroku deployment
