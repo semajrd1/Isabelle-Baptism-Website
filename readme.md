@@ -90,13 +90,6 @@ Ensure you have Python installed on your system (recommended: Python 3.8+).
 - Enhance accessibility and UI design.
 - Integrate Google Maps for event location display.
 
-## Contribution Guidelines
-If you would like to contribute:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Commit your changes and push the branch.
-4. Open a pull request for review.
-
 ## Contact
 For any questions or suggestions, feel free to reach out!
 
